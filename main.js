@@ -10,12 +10,12 @@ errorMod.classList.add('hidden') //add class to error mod
 //creates events listeners for click events
 const heartClicked = (e) => { //creates event for the just the hearts
   mimicServerCall() //mimicServer invoked
-  .then(() => {  //when the server responds
-    if(e.target.textContent == EMPTY_HEART) { //checks heart if empty
+  .then(() => {  //when the server responds positive
+    if(e.target.textContent == EMPTY_HEART) { //checks heart if empty. When clicked, do below
       e.target.textContent = FULL_HEART  // change it full heart
       e.target.classList.add('activated-heart') //added class gives color to full heart
       }else {
-        e.target.textContent = EMPTY_HEART // other option is to change to empty heart
+        e.target.textContent = EMPTY_HEART // when clicked again, if the heart was full, change it to empty
         e.target.classList.remove('activated-heart') //and then remove the color
       }
   })
